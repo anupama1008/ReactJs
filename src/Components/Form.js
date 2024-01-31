@@ -1,64 +1,50 @@
-import React,{useState} from 'react'
-import App from '../App';
-
-export default function Form(props) {
-  const [text, setText]=useState('Write here----');
-  const convertToUpper=()=>{
-    let finaltext=text.toUpperCase();
-    //console.log({text});
-    setText(finaltext)
-    props.showAlert("Capitalized text","success");
-  }
-  const clearText =()=>{
-    setText('');
-    props.showAlert("Cleared Text area","success");
-  }
-  const convertToLower=()=>{
-    let finaltext=text.toLowerCase();
-    //console.log({text});
-    setText(finaltext)
-    props.showAlert("Converted to Lower case.","success");
-  }
-  const handleOnChange=(event)=>{
-    //console.log("changed");
-    setText(event.target.value)
-  }
-  const speak=()=>{
-    let msg=new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(msg);
-    const toggle=document.getElementById('speaker');
-    if(toggle.innerHTML==='speak')
-    toggle.innerHTML='stop';
-    else{
-      toggle.innerHTML='speak';
-      window.speechSynthesis.cancel();
-      props.showAlert("Text speaking","success"); 
-    }
-  }
-  const reverse=()=>{
-    let ram=text;
-    let revers=ram.split('').reverse().join('');
-    setText(revers);
-    props.showAlert("Text reversed.","success");
-  }
-  return (
+import React from 'react'
+import "../CSS/final.css";
+import bannerimage from "../IMAGE/banner.png"
+export default function Form() {
+return (
 <>
-<div className="container mb-3">
-<label htmlFor="textbox" className="form-label">{props.heading}</label>
-<textarea className="form-control" id="textbox" rows="7" value={text} onChange={handleOnChange}></textarea>
-<button className="btn btn-primary mx-3 my-3" onClick={convertToUpper}>Convert to Uppercase</button>
-<button className="btn btn-primary mx-3" onClick={convertToLower}>Convert to Lowercase</button>
-<button className="btn btn-primary mx-3" onClick={clearText}>Clear Text</button>
-<button className="btn btn-primary mx-3" id='speaker' onClick={speak}>Speak</button>
-<button className="btn btn-primary mx-3" id='speaker' onClick={reverse}>Reverse </button>
+<div className="disp">
+    <img src={bannerimage} alt=""/>
 </div>
-<div className="container">
-<h4>Your text summary.</h4>
-<p>{text.split(' ').length} word and {text.length} characters.</p>
-<p>{0.008*text.split('').length} Minutes to read</p>
-<h4>Preview</h4>
-<p>{text}</p>
-</div>
+<form action="Search.php" method='post'>
+    <div class="search">
+        <p>
+        FIND THE ROOM 
+        </p>
+        <p>TYPE  <select name="type" id="type">
+            <option value="SELECT">SELECT</option>
+            <option value="SINGLE">Single</option>
+            <option value="SHARED">Shared</option>
+            <option value="TRIPLE">Triple</option>
+            <option value="FAMILY">Family</option>
+            <option value="FLAT">Flat</option>
+        </select> 
+        </p>
+        <p>PRICE  <select name="price" id="price">
+            <option value="Price">Range</option>
+            <option value="Below 1000">Below RS1000</option>
+            <option value="1000">RS 1000</option>
+            <option value="2000">RS 2000</option>
+            <option value="3000">RS 3000</option>
+            <option value="4000">RS 4000</option>
+            <option value="5000">RS 5000</option>
+            <option value="6000">RS 6000</option>
+            <option value="7000">RS 7000</option>
+            <option value="8000">RS 8000</option>
+            <option value="9000">RS 9000</option>
+            <option value="10000">RS 10000</option>
+            <option value="Above 10000">Above RS10000</option>
+        </select>
+        </p>
+        <p>LOCATION
+            <input type='text' name='location'/>
+        </p>
+    <p>
+        <input type="submit" value="Explore Rooms" name="search"/>
+    </p>
+    </div>
+</form>
 </>
-  )
+)
 }
