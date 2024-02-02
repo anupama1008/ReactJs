@@ -4,7 +4,7 @@ import Contacts from "./Components/Contacts";
 import Menu from "./Components/Menu";
 import Rooms from "./Components/Rooms";
 import Signin from "./Components/Signin";
-import UserProfile from "./Components/UserProfile";
+import AddRoom from "./Components/AddRoom";
 import Signup from "./Components/Signup";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
