@@ -1,25 +1,26 @@
 import React from 'react'
 import "../CSS/nav.css";
 import myimage from "../IMAGE/logo.png";
+import {Link} from "react-router-dom";
 export default function Navbar() {
   return (
     <>
-    <div className="top">
+      <div className="top">
       <p className='imgg'>
         <img src={myimage} alt="" />
       </p>
         <nav>
         <ul>
-        <li><a href="Home.php">Home</a></li>
-        <li><a href="Dashboard.php">Rooms</a></li>
-        <li><a href="Home.php#Contacts">Contact</a></li>
-        <li><a href="Home.php">Menu</a></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/rooms">Rooms</Link></li>
+        <li><Link to="/contacts">Contacts</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
        
       </ul>
         </nav>
         <p >
-        <a href="signup.php"><button className="abtn" name='Login'>+ ADD</button>  </a>
-          <a href="LoginUser.php"><button className="abtn" name='Login'>LOGIN</button>  </a>
+        <Link to="/addroom"><button className="abtn" name='Login'>+ ADD</button>  </Link>
+        <Link to="/signin"><button className="abtn" name='Login'>LOGIN</button>  </Link>
         </p>
     </div>
 </>

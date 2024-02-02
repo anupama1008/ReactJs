@@ -1,7 +1,7 @@
 import React from 'react'
 import "../CSS/final.css";
 import bannerimage from "../IMAGE/banner.png"
-export default function Form() {
+export default function Home() {
 return (
 <>
 <div className="disp">
