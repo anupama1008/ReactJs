@@ -1,5 +1,6 @@
 import React from 'react'
 import Motto from '../Components/Motto';
+import image from "../IMAGE/logo_transparent.png"
 import {Link} from "react-router-dom";
 export default function Signup() {
   return (
@@ -8,7 +9,7 @@ export default function Signup() {
        <Motto/>
         <div  className="formbox">
             <div  className='logo'>
-                <div id='image'><img src="IMAGE/logo_transparent.png" alt=""/></div>
+                <div id='image'><img src={image} alt=""/></div>
                 <div id='tag'><h2>CHHAANO</h2></div>
             </div>
             <h3>Sign Up</h3>

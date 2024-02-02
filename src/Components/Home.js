@@ -8,7 +8,7 @@ return (
     <img src={bannerimage} alt=""/>
 </div>
 <form action="Search.php" method='post'>
-    <div class="search">
+    <div className="search">
         <p>
         FIND THE ROOM 
         </p>
