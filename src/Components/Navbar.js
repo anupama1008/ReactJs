@@ -11,7 +11,7 @@ export default function Navbar() {
       </p>
         <nav>
         <ul>
-        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/rooms">Rooms</Link></li>
         <li><Link to="/contacts">Contacts</Link></li>
         <li><Link to="/menu">Menu</Link></li>
